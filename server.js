@@ -87,7 +87,7 @@ app.listen(PORT);
 // "mongodb://localhost/scrapedData"
 
 mongoose.connect(
-  process.env.MONGODB_URI || "mongodb://heroku_44g8qt8b:5o55vgqgvioulkuqpoc1spmnl2@ds349618.mlab.com:49618/heroku_44g8qt8b",
+  process.env.MONGODB_URI || "mongodb://localhost/scrapedData",
   {
     useMongoClient: true
   }
