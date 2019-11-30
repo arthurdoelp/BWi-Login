@@ -86,9 +86,14 @@ app.listen(PORT);
 
 // "mongodb://localhost/scrapedData"
 
-mongoose.connect(
-  process.env.MONGODB_URI || "mongodb://localhost/scrapedData",
-  {
-    useMongoClient: true
-  }
-);
+// If deployed, use the deployed database. Otherwise use the local mongoHeadlines database
+var MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost/scrapedData";
+
+mongoose.connect(MONGODB_URI);
+
+// mongoose.connect(
+//   process.env.MONGODB_URI || "mongodb://localhost/scrapedData",
+//   {
+//     useMongoClient: true
+//   }
+// );
