@@ -84,8 +84,10 @@ if (process.env.NODE_ENV === "production") {
 const PORT = process.env.PORT || 3001;
 app.listen(PORT);
 
+// "mongodb://localhost/scrapedData"
+
 mongoose.connect(
-  process.env.MONGODB_URI || "mongodb://localhost/scrapedData",
+  process.env.MONGODB_URI || "mongodb://user1:password1@ds349618.mlab.com:49618/heroku_44g8qt8b",
   {
     useMongoClient: true
   }
