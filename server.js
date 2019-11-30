@@ -24,8 +24,8 @@ var databaseUrl = "bwi-login";
 var collections = ["scrapedData"];
 
 // Hook mongojs configuration to the db variable
-// var db = mongojs(databaseUrl, collections);
-var db = mongoose.connection;
+var db = mongojs(databaseUrl, collections);
+// var db = mongoose.connection;
 db.on("error", function(error) {
   console.log("Database Error:", error);
 });
