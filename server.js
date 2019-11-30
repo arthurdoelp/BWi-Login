@@ -89,7 +89,7 @@ if (process.env.NODE_ENV === "production") {
 // If deployed, use the deployed database. Otherwise use the local mongoHeadlines database
 var CONNECTION_URI = process.env.MONGODB_URI || "mongodb://localhost/scrapedData";
 
-mongoose.connection(CONNECTION_URI, { useNewUrlParser: true });
+mongoose.connect(CONNECTION_URI, { useNewUrlParser: true });
 
 // mongoose.connect(
 //   process.env.MONGODB_URI || "mongodb://localhost/scrapedData",
