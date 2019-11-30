@@ -86,9 +86,9 @@ if (process.env.NODE_ENV === "production") {
 // "mongodb://localhost/scrapedData"
 
 // If deployed, use the deployed database. Otherwise use the local mongoHeadlines database
-var CONNECTION_URI = process.env.MONGODB_URI || "mongodb://user1:password1@ds349618.mlab.com:49618/heroku_44g8qt8b";
+var CONNECTION_URI = process.env.MONGODB_URI || "mongodb://localhost/scrapedData";
 
-mongoose.connect(CONNECTION_URI);
+mongoose.connect(CONNECTION_URI, { useNewUrlParser: true });
 
 // mongoose.connect(
 //   process.env.MONGODB_URI || "mongodb://localhost/scrapedData",
