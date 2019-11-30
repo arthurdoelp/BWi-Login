@@ -81,15 +81,14 @@ if (process.env.NODE_ENV === "production") {
     });
   }
 
-const PORT = process.env.PORT || 3001;
-app.listen(PORT);
+
 
 // "mongodb://localhost/scrapedData"
 
 // If deployed, use the deployed database. Otherwise use the local mongoHeadlines database
-var MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost/scrapedData";
+var CONNECTION_URI = process.env.MONGODB_URI || "mongodb://localhost/scrapedData";
 
-mongoose.connect(MONGODB_URI);
+mongoose.connect(CONNECTION_URI);
 
 // mongoose.connect(
 //   process.env.MONGODB_URI || "mongodb://localhost/scrapedData",
@@ -97,3 +96,6 @@ mongoose.connect(MONGODB_URI);
 //     useMongoClient: true
 //   }
 // );
+
+const PORT = process.env.PORT || 3001;
+app.listen(PORT);
