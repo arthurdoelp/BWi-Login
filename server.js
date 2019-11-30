@@ -30,9 +30,9 @@ db.on("error", function(error) {
 });
 
 // Main route (simple Hello World Message)
-app.get("/", function(req, res) {
-    res.send("Hello world");
-  });
+// app.get("/", function(req, res) {
+//     res.send("Hello world");
+//   });
 
 // Place login credentials into the mongodb db
 app.post("/login", function(req, res) {
