@@ -4,6 +4,7 @@ var mongojs = require("mongojs");
 var logger = require("morgan");
 var mongoose = require("mongoose");
 var axios = require("axios");
+var dotenv = require('dotenv').config();
 
 // // Require all models
 // var db = require("./models/index");
