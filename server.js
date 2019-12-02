@@ -21,7 +21,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
 // Database configuration
-var databaseUrl = "bwi-login";
+var databaseUrl = "mongodb://heroku_g7z98bwz:garmi9k0mkb1hi8h9g3okifo7n@ds047315.mlab.com:47315/heroku_g7z98bwz";
 var collections = ["scrapedData"];
 
 // Hook mongojs configuration to the db variable
