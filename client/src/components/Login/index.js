@@ -43,50 +43,54 @@ class Login extends Component {
         });
     }
 
-render() {
-    if (this.state.redirectTo) {
-        return <Redirect to={{ pathname: this.state.redirectTo }} />;
-    } else {
-        return (
-            <div>
-                <div>
-                    <form className="login-form col-sm-4 col-md-4 col-lg-4">
-                        <div className="form-group">
-                            <label className="col-form-label-lg" for="email-input">Email address</label>
-                            <input
-                                type="email"
-                                className="form-control form-control-lg"
-                                id="email-input"
-                                name="email"
-                                aria-describedby="emailHelp"
-                                placeholder="Enter Email..."
-                                value={this.state.email}
-                                onChange={this.handleChange}
-                                required
-                            />
-                            <small id="emailHelp" className="form-text text-muted">We'll never share your email with anyone else.</small>
+    render() {
+        if (this.state.redirectTo) {
+            return <Redirect to={{ pathname: this.state.redirectTo }} />;
+        } else {
+            return (
+                <div className="container-fluid">
+                    <div className="row">
+                        <div className="col-sm-4 col-md-4 col-lg-4"></div>
+                        <div className="col-sm-4 col-md-4 col-lg-4">
+                            <form className="login-form">
+                                <div className="form-group">
+                                    <label className="col-form-label-lg" for="email-input">Email address</label>
+                                    <input
+                                        type="email"
+                                        className="form-control form-control-lg"
+                                        id="email-input"
+                                        name="email"
+                                        aria-describedby="emailHelp"
+                                        placeholder="Enter Email..."
+                                        value={this.state.email}
+                                        onChange={this.handleChange}
+                                        required
+                                    />
+                                    <small id="emailHelp" className="form-text text-muted">We'll never share your email with anyone else.</small>
+                                </div>
+                                <div className="form-group">
+                                    <label className="col-form-label-lg" for="password-input">Password</label>
+                                    <input
+                                        type="password"
+                                        className="form-control form-control-lg"
+                                        id="password-input"
+                                        name="password"
+                                        placeholder="Enter Password..."
+                                        value={this.state.password}
+                                        onChange={this.handleChange}
+                                        required
+                                    />
+                                </div>
+                                <button type="submit" id="signup" className="btn btn-primary btn-lg mr-2" onClick={this.handleSubmit}>Signup</button>
+                                <button type="submit" id="login" className="btn btn-primary btn-lg ml-2" >Login</button>
+                            </form>
                         </div>
-                        <div className="form-group">
-                            <label className="col-form-label-lg" for="password-input">Password</label>
-                            <input
-                                type="password"
-                                className="form-control form-control-lg"
-                                id="password-input"
-                                name="password"
-                                placeholder="Enter Password..."
-                                value={this.state.password}
-                                onChange={this.handleChange}
-                                required
-                            />
-                        </div>
-                        <button type="submit" id="signup" className="btn btn-primary btn-lg mr-2" onClick={this.handleSubmit}>Signup</button>
-                        <button type="submit" id="login" className="btn btn-primary btn-lg ml-2" >Login</button>
-                    </form>
+                        <div className="col-sm-4 col-md-4 col-lg-4"></div>
+                    </div>
                 </div>
-            </div>
-        );
+            );
+        }
     }
-}
 }
 
 export default Login;
