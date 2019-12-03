@@ -21,6 +21,12 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
 // Database configuration
+// I had an issue here.  If you want to connect to a remote server like mlab for heroku, you need to include the database url/uri
+// this is the mongodb://jfniegegogij uri that is created automatically when you privision a mlab db in heroku. If you want to create a new user for 
+//the db, you can but you need to correctly update the mongodb uri to connect the same data i.e. username and password. See https://devcenter.heroku.com/articles/mongolab#connecting-to-your-mongodb-instance
+//See https://youtu.be/2E8eWUHJaNg?list=PLOFmg4xbN_TPrB6w4rThsFanVxJI_SfER for help deploying mongodb to heroku. ***This process will be different if you use conventional routing and models with Mongoose.
+//this particular example is for using mongojs npm package along with heroku and mlab.
+//This database url will revert to local url, bwi-login (arbitrary), or the process.env.MONGODB_URI for connecting with mlab. No need to create a seperate .env file for storing the MONGODB_URI
 var databaseUrl = process.env.MONGODB_URI || "bwi-login";
 var collections = ["scrapedData"];
 
